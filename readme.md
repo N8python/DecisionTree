@@ -13,7 +13,9 @@ DecisionTree story =
           new DecisionTree("You look for fish. As you do, a shark swims by and attacks you. You die."),
           new DecisionTree("You withdraw from the water as a shark passes by, escaping death by moments.")
         ),
-        new DecisionTree("You refrain from drinking the water. A few minutes later, a shark swims by. You realize that had you entered the water, you would have died.")
+        new DecisionTree("You refrain from drinking the water. 
+        A few minutes later, a shark swims by. 
+        You realize that had you entered the water, you would have died.")
       );
 ```
 When a decision tree instance is only passed a string, it is considered the end of the story.
