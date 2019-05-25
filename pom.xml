@@ -4,9 +4,58 @@
   <groupId>com.n8programs</groupId>
   <artifactId>jpademo</artifactId>
   <version>1.0</version>
+
   <packaging>jar</packaging>
   <name>DecisionTree</name>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <version>3.5.1</version>
+              <configuration>
+                  <source>8</source>
+                  <target>8</target>
+              </configuration>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-shade-plugin</artifactId>
+               <version>3.2.1</version>
+               <executions>
+                   <execution>
+                       <phase>package</phase>
+                       <goals>
+                           <goal>shade</goal>
+                       </goals>
+                       <configuration>
+                           <transformers>
+                               <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                   <mainClass>com.n8programs.DecisionTree</mainClass>
+                               </transformer>
+                           </transformers>
+                       </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
